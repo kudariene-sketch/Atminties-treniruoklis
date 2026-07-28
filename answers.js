@@ -9,7 +9,37 @@
 "use strict";
 
 /* ==========================================
-   Parodyti atsakymų mygtukus
+   Parodyti atsakymų ekraną
+========================================== */
+
+function showAnswers() {
+
+    stopTimer();
+
+    UI.showScreen("answerScreen");
+
+    showQuestionTitle();
+
+    showAnswerButtons();
+
+}
+
+/* ==========================================
+   Klausimo antraštė
+========================================== */
+
+function showQuestionTitle() {
+
+    const title = document.getElementById("questionTitle");
+
+    if (!title) return;
+
+    title.textContent = "Kuris paveikslėlis buvo rodomas?";
+
+}
+
+/* ==========================================
+   Sugeneruoti atsakymų mygtukus
 ========================================== */
 
 function showAnswerButtons() {
@@ -22,7 +52,20 @@ function showAnswerButtons() {
 
     container.innerHTML = "";
 
-    mission.answers.forEach(answer => {
+    // Sukuriame atsakymų kopiją
+    const shuffledAnswers = [...mission.answers];
+
+    // Fisher–Yates maišymas
+    for (let i = shuffledAnswers.length - 1; i > 0; i--) {
+
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [shuffledAnswers[i], shuffledAnswers[j]] =
+            [shuffledAnswers[j], shuffledAnswers[i]];
+
+    }
+
+    shuffledAnswers.forEach(answer => {
 
         const button = document.createElement("button");
 
@@ -30,7 +73,7 @@ function showAnswerButtons() {
 
         button.textContent = answer;
 
-        button.addEventListener("click", function () {
+        button.addEventListener("click", () => {
 
             answerSelected(answer);
 
@@ -48,22 +91,14 @@ function showAnswerButtons() {
 
 function answerSelected(answer) {
 
-    const correct = checkAnswer(answer);
+    const isCorrect = checkAnswer(answer);
 
-    if (correct) {
-
-        console.log("Teisingas atsakymas");
-
-    } else {
-
-        console.log("Neteisingas atsakymas");
-
-    }
+    showFeedback(isCorrect);
 
 }
 
 /* ==========================================
-   Atsakymo tikrinimas
+   Patikrinti atsakymą
 ========================================== */
 
 function checkAnswer(answer) {

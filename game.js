@@ -2,7 +2,7 @@
  * ==========================================
  * Atminties treniruoklis
  * File: game.js
- * Release: v0.6.0
+ * Release: RC-1
  * ==========================================
  */
 
@@ -49,6 +49,7 @@ function initGame() {
 function startGame() {
 
     game.currentMission = 0;
+    game.score = 0;
 
     loadMission();
 
@@ -126,79 +127,5 @@ function showMemoryItems(items) {
         container.appendChild(card);
 
     });
-
-}
-
-/* ==========================================
-   Parodyti atsakymų ekraną
-========================================== */
-
-function showAnswers() {
-
-    stopTimer();
-
-    UI.showScreen("answerScreen");
-
-    showQuestionTitle();
-
-    showAnswerButtons();
-
-}
-
-/* ==========================================
-   Antraštė
-========================================== */
-
-function showQuestionTitle() {
-
-    const title = document.getElementById("questionTitle");
-
-    if (!title) return;
-
-    title.textContent = "Kuris paveikslėlis buvo rodomas?";
-
-}
-
-/* ==========================================
-   Sugeneruoti atsakymų mygtukus
-========================================== */
-
-function showAnswerButtons() {
-
-    const mission = QUESTIONS[game.currentMission];
-
-    const container = document.getElementById("answersContainer");
-
-    if (!container) return;
-
-    container.innerHTML = "";
-
-    mission.answers.forEach(answer => {
-
-        const button = document.createElement("button");
-
-        button.className = "answerCard";
-
-        button.textContent = answer;
-
-        button.addEventListener("click", function () {
-
-            answerSelected(answer);
-
-        });
-
-        container.appendChild(button);
-
-    });
-
-}
-
-/* ==========================================
-   Pasirinktas atsakymas
-========================================== */
-
-function answerSelected(answer) {
-
-    console.log("Pasirinkta:", answer);
 
 }
