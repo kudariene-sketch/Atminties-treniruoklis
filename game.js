@@ -2,13 +2,15 @@
  * ==========================================
  * SDL Game Engine
  * File: game.js
- * Version: 0.1.0
+ * Version: 0.3.0
  * ==========================================
  */
 
 "use strict";
 
-/* Žaidimo būsena */
+/* ==========================================
+   Žaidimo būsena
+========================================== */
 
 const game = {
 
@@ -19,18 +21,24 @@ const game = {
 };
 
 
-/* Paleidžiama užkrovus puslapį */
+/* ==========================================
+   Paleidimas
+========================================== */
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", initialize);
 
 
-/* Inicializacija */
+/* ==========================================
+   Inicializacija
+========================================== */
 
-function init() {
+function initialize() {
 
-    console.log(CONFIG.gameTitle + " v" + CONFIG.version);
+    console.log(`${CONFIG.gameTitle} v${CONFIG.version}`);
 
     UI.setTitle(CONFIG.gameTitle);
+
+    Progress.update(1);
 
     document
         .getElementById("startButton")
@@ -39,14 +47,41 @@ function init() {
 }
 
 
-/* Pradėti žaidimą */
+/* ==========================================
+   Pradėti žaidimą
+========================================== */
 
 function startGame() {
 
     game.state = "playing";
 
+    game.currentQuestion = 0;
+
     UI.showScreen("gameScreen");
 
-    console.log("Žaidimas pradėtas");
+    showQuestion();
+
+}
+
+
+/* ==========================================
+   Rodyti užduotį
+========================================== */
+
+function showQuestion() {
+
+    const question = QUESTIONS[game.currentQuestion];
+
+    document.getElementById("gameScreen").innerHTML = `
+
+        <div class="card">
+
+            <h2>${question.title}</h2>
+
+            <p>${question.instruction}</p>
+
+        </div>
+
+    `;
 
 }
