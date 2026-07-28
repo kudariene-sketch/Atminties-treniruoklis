@@ -1,8 +1,8 @@
 /**
  * ==========================================
- * SDL Game Engine
+ * Atminties treniruoklis
  * File: game.js
- * Version: 0.3.0
+ * Release: v0.6.0
  * ==========================================
  */
 
@@ -13,39 +13,34 @@
 ========================================== */
 
 const game = {
-
-    currentQuestion: 0,
-    score: 0,
-    state: "welcome"
-
+    currentMission: 0,
+    totalMissions: QUESTIONS.length,
+    score: 0
 };
-
 
 /* ==========================================
    Paleidimas
 ========================================== */
 
-document.addEventListener("DOMContentLoaded", initialize);
-
+document.addEventListener("DOMContentLoaded", initGame);
 
 /* ==========================================
    Inicializacija
 ========================================== */
 
-function initialize() {
+function initGame() {
 
-    console.log(`${CONFIG.gameTitle} v${CONFIG.version}`);
+    console.log("Atminties treniruoklis paleistas");
 
-    UI.setTitle(CONFIG.gameTitle);
+    UI.showScreen("welcomeScreen");
 
-    Progress.update(1);
+    const startButton = document.getElementById("startButton");
 
-    document
-        .getElementById("startButton")
-        .addEventListener("click", startGame);
+    if (startButton) {
+        startButton.addEventListener("click", startGame);
+    }
 
 }
-
 
 /* ==========================================
    Pradėti žaidimą
@@ -53,35 +48,157 @@ function initialize() {
 
 function startGame() {
 
-    game.state = "playing";
+    game.currentMission = 0;
 
-    game.currentQuestion = 0;
+    loadMission();
 
     UI.showScreen("gameScreen");
 
-    showQuestion();
+}
+
+/* ==========================================
+   Įkelti misiją
+========================================== */
+
+function loadMission() {
+
+    const mission = QUESTIONS[game.currentMission];
+
+    updateMissionCounter();
+
+    showInstruction(mission.instruction);
+
+    showMemoryItems(mission.memoryItems);
+
+    startTimer();
 
 }
 
-
 /* ==========================================
-   Rodyti užduotį
+   Misijos numeris
 ========================================== */
 
-function showQuestion() {
+function updateMissionCounter() {
 
-    const question = QUESTIONS[game.currentQuestion];
+    const missionCounter = document.getElementById("missionCounter");
 
-    document.getElementById("gameScreen").innerHTML = `
+    if (!missionCounter) return;
 
-        <div class="card">
+    missionCounter.textContent =
+        `Misija ${game.currentMission + 1} iš ${game.totalMissions}`;
 
-            <h2>${question.title}</h2>
+}
 
-            <p>${question.instruction}</p>
+/* ==========================================
+   Instrukcija
+========================================== */
 
-        </div>
+function showInstruction(text) {
 
-    `;
+    const instruction = document.getElementById("instruction");
+
+    if (!instruction) return;
+
+    instruction.textContent = text;
+
+}
+
+/* ==========================================
+   Parodyti paveikslėlius
+========================================== */
+
+function showMemoryItems(items) {
+
+    const container = document.getElementById("imageContainer");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    items.forEach(item => {
+
+        const card = document.createElement("div");
+
+        card.className = "imageCard";
+
+        card.textContent = item;
+
+        container.appendChild(card);
+
+    });
+
+}
+
+/* ==========================================
+   Parodyti atsakymų ekraną
+========================================== */
+
+function showAnswers() {
+
+    stopTimer();
+
+    UI.showScreen("answerScreen");
+
+    showQuestionTitle();
+
+    showAnswerButtons();
+
+}
+
+/* ==========================================
+   Antraštė
+========================================== */
+
+function showQuestionTitle() {
+
+    const title = document.getElementById("questionTitle");
+
+    if (!title) return;
+
+    title.textContent = "Kuris paveikslėlis buvo rodomas?";
+
+}
+
+/* ==========================================
+   Sugeneruoti atsakymų mygtukus
+========================================== */
+
+function showAnswerButtons() {
+
+    const mission = QUESTIONS[game.currentMission];
+
+    const container = document.getElementById("answersContainer");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    mission.answers.forEach(answer => {
+
+        const button = document.createElement("button");
+
+        button.className = "answerCard";
+
+        button.textContent = answer;
+
+        button.addEventListener("click", function () {
+
+            answerSelected(answer);
+
+        });
+
+        container.appendChild(button);
+
+    });
+
+}
+
+/* ==========================================
+   Pasirinktas atsakymas
+========================================== */
+
+function answerSelected(answer) {
+
+    console.log("Pasirinkta:", answer);
 
 }

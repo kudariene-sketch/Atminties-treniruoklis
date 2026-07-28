@@ -1,8 +1,8 @@
 /**
  * ==========================================
- * SDL Game Engine
+ * Atminties treniruoklis
  * File: ui.js
- * Version: 0.1.0
+ * Release: v0.4.0A
  * ==========================================
  */
 
@@ -10,21 +10,37 @@
 
 const UI = {
 
+    /**
+     * Parodo vieną ekraną
+     */
     showScreen(screenId) {
 
+        // Paslepiame visus ekranus
         document
             .querySelectorAll(".screen")
-            .forEach(screen => screen.classList.remove("active"));
+            .forEach(screen => {
+                screen.classList.remove("active");
+            });
 
-        document
-            .getElementById(screenId)
-            .classList.add("active");
+        // Parodome pasirinktą
+        const screen = document.getElementById(screenId);
+
+        if (screen) {
+            screen.classList.add("active");
+        }
 
     },
 
+    /**
+     * Pakeičia žaidimo pavadinimą
+     */
     setTitle(title) {
 
-        document.getElementById("game-title").textContent = title;
+        const gameTitle = document.getElementById("gameTitle");
+
+        if (gameTitle) {
+            gameTitle.textContent = title;
+        }
 
     }
 

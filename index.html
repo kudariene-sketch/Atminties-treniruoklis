@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="lt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Atminties treniruoklis</title>
 
     <link rel="stylesheet" href="style.css">
@@ -14,99 +12,158 @@
 
 <div id="app">
 
-    <!-- ================= HEADER ================= -->
+    <!-- ========================================= -->
+    <!-- PASISVEIKINIMO EKRANAS -->
+    <!-- ========================================= -->
 
-    <header class="game-header">
+    <section id="welcomeScreen" class="screen active">
 
-        <h1 id="game-title">
-            🧠 Atminties treniruoklis
+        <h1 id="gameTitle">
+            Atminties treniruoklis
         </h1>
 
-        <div class="timer-wrapper">
-            <div id="timer-circle">
-                <span id="timer-value">5</span>
-            </div>
+        <div class="robot">
+            🤖
         </div>
 
-        <div class="progress-panel">
+        <h2>Labas!</h2>
 
-            <div id="progress-text">
-                1 / 10
+        <p>Aš esu robotukė Mintelė.</p>
+
+        <p>Kviečiu lavinti atmintį.</p>
+
+        <button id="startButton">
+            Pradėti
+        </button>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- ŽAIDIMO EKRANAS -->
+    <!-- ========================================= -->
+
+    <section id="gameScreen" class="screen">
+
+        <header class="gameHeader">
+
+            <h1>Atminties treniruoklis</h1>
+
+            <div class="gameInfo">
+
+                <div id="missionCounter">
+                    Misija 1 iš 5
+                </div>
+
+                <div id="timer">
+                    5
+                </div>
+
             </div>
 
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
+        </header>
+
+        <div id="instruction">
+            Įsimink paveikslėlius.
+        </div>
+
+        <div id="imageContainer">
 
         </div>
 
-    </header>
+    </section>
 
-    <!-- ================= MAIN ================= -->
+    <!-- ========================================= -->
+    <!-- ATSAKYMŲ EKRANAS -->
+    <!-- ========================================= -->
 
-    <main>
+    <section id="answerScreen" class="screen">
 
-        <!-- Pasisveikinimo ekranas -->
+        <h2 id="questionTitle">
 
-        <section id="welcomeScreen"
-                 class="screen card active">
+            Kuris paveikslėlis buvo rodomas?
 
-            <h2>🤖 Labas!</h2>
+        </h2>
 
-            <p>
-                Aš esu robotukė <strong>Mintelė</strong>.
-            </p>
+        <div id="answersContainer">
 
-            <p>
-                Kviečiu kartu lavinti atmintį.
-            </p>
+        </div>
 
-            <button id="startButton">
-                Pradėti
-            </button>
+    </section>
 
-        </section>
+    <!-- ========================================= -->
+    <!-- GRĮŽŽTAMASIS RYŠYS -->
+    <!-- ========================================= -->
 
-        <!-- Žaidimo ekranas -->
+    <section id="feedbackScreen" class="screen">
 
-        <section id="gameScreen"
-                 class="screen">
+        <div id="feedbackIcon">
 
-            <h2>
-                🧠 Žaidimas prasidėjo!
-            </h2>
+            ⭐
 
-            <p>
-                JavaScript jau veikia.
-            </p>
+        </div>
 
-        </section>
+        <h2 id="feedbackTitle">
 
-    </main>
+            Puiku!
 
-    <!-- ================= FOOTER ================= -->
+        </h2>
 
-    <footer>
+        <p id="feedbackMessage">
 
-        <p>
-            Skaitmeninių žaidimų laboratorija
+            Tu padėjai Mintelei.
+
         </p>
 
+        <button id="nextButton">
+
+            Kita misija
+
+        </button>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- PABAIGOS EKRANAS -->
+    <!-- ========================================= -->
+
+    <section id="finishScreen" class="screen">
+
+        <h1>🏆</h1>
+
+        <h2>
+
+            Šaunu!
+
+        </h2>
+
         <p>
-            © 2026 Sigita Koroliovė
+
+            Tu įveikei visas misijas.
+
         </p>
 
-    </footer>
+        <button id="restartButton">
+
+            Žaisti dar kartą
+
+        </button>
+
+    </section>
 
 </div>
 
-<!-- JavaScript failai -->
+<!--
+Release v0.4.0A
 
-<script src="config.js"></script>
-<script src="ui.js"></script>
-<script src="progress.js"></script>
-<script src="questions.js"></script>
-<script src="game.js"></script>
+Šiame etape sąmoningai NEPRIJUNGIAME JavaScript failų.
+Pirmiausia patvirtiname HTML ir CSS architektūrą.
+Kitame etape prijungsime naujus suderintus JS failus.
+-->
 
 </body>
 </html>
+<script src="config.js"></script>
+<script src="ui.js"></script>
+<script src="questions.js"></script>
+<script src="timer.js"></script>
+<script src="game.js"></script>

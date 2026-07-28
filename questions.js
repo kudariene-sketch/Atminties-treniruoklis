@@ -1,8 +1,8 @@
 /**
  * ==========================================
- * SDL Game Engine
+ * Atminties treniruoklis
  * File: questions.js
- * Version: 0.3.0
+ * Release: v0.4.0B
  * ==========================================
  */
 
@@ -12,20 +12,112 @@ const QUESTIONS = [
 
     {
         id: 1,
-        title: "1 užduotis",
-        instruction: "Įsimink paveikslėlius."
+
+        instruction: "Įsimink paveikslėlius.",
+
+        memoryItems: [
+            "🍎",
+            "🐶"
+        ],
+
+        answers: [
+            "🍎",
+            "🚗",
+            "⚽",
+            "🐸"
+        ],
+
+        correctAnswer: "🍎"
     },
 
     {
         id: 2,
-        title: "2 užduotis",
-        instruction: "Kuris paveikslėlis dingo?"
+
+        instruction: "Įsimink paveikslėlius.",
+
+        memoryItems: [
+            "🍌",
+            "🚲",
+            "🦋"
+        ],
+
+        answers: [
+            "🚲",
+            "🐱",
+            "🌸",
+            "🍓"
+        ],
+
+        correctAnswer: "🚲"
     },
 
     {
         id: 3,
-        title: "3 užduotis",
-        instruction: "Pasirink teisingą atsakymą."
+
+        instruction: "Įsimink paveikslėlius.",
+
+        memoryItems: [
+            "🐰",
+            "🌞",
+            "🚗",
+            "🍉"
+        ],
+
+        answers: [
+            "🍉",
+            "⚓",
+            "🎈",
+            "🍪"
+        ],
+
+        correctAnswer: "🍉"
+    },
+
+    {
+        id: 4,
+
+        instruction: "Įsimink paveikslėlius.",
+
+        memoryItems: [
+            "🦊",
+            "🚂",
+            "🍇",
+            "⭐",
+            "🐝"
+        ],
+
+        answers: [
+            "⭐",
+            "🍰",
+            "🎁",
+            "🌵"
+        ],
+
+        correctAnswer: "⭐"
+    },
+
+    {
+        id: 5,
+
+        instruction: "Įsimink paveikslėlius.",
+
+        memoryItems: [
+            "🐢",
+            "🍒",
+            "🚁",
+            "🌈",
+            "🎀",
+            "🦆"
+        ],
+
+        answers: [
+            "🌈",
+            "🥕",
+            "🚜",
+            "⚽"
+        ],
+
+        correctAnswer: "🌈"
     }
 
 ];
