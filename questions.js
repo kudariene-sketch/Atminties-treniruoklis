@@ -118,6 +118,169 @@ const QUESTIONS = [
         ],
 
         correctAnswer: "🌈"
-    }
+    },    ,
+{
+    id: 6,
+
+    instruction: "Įsimink paveikslėlius.",
+
+    memoryItems: [
+        "🐱",
+        "🍐",
+        "🚌",
+        "🌼",
+        "🦉",
+        "🎈",
+        "🌳"
+    ],
+
+    answers: [
+        "🚌",
+        "🍕",
+        "⚓",
+        "🐙"
+    ],
+
+    correctAnswer: "🚌"
+},
+
+{
+    id: 7,
+
+    instruction: "Įsimink paveikslėlius.",
+
+    memoryItems: [
+        "🐸",
+        "🚒",
+        "🍍",
+        "🌙",
+        "🐞",
+        "📚",
+        "🎁",
+        "🌻"
+    ],
+
+    answers: [
+        "🐞",
+        "🍩",
+        "🚀",
+        "🎸"
+    ],
+
+    correctAnswer: "🐞"
+},
+
+{
+    id: 8,
+
+    instruction: "Įsimink paveikslėlius.",
+
+    memoryItems: [
+        "🐼",
+        "🚢",
+        "🥝",
+        "⭐",
+        "🌲",
+        "🎨",
+        "🚴",
+        "🍓",
+        "🦋"
+    ],
+
+    answers: [
+        "🥝",
+        "🍔",
+        "🏀",
+        "🦀"
+    ],
+
+    correctAnswer: "🥝"
+},
+
+{
+    id: 9,
+
+    instruction: "Įsimink paveikslėlius.",
+
+    memoryItems: [
+        "🦁",
+        "🚜",
+        "🍊",
+        "☀️",
+        "🐟",
+        "📖",
+        "🎲",
+        "🌺",
+        "🚂",
+        "🍇"
+    ],
+
+    answers: [
+        "🚜",
+        "🍟",
+        "🎹",
+        "🐬"
+    ],
+
+    correctAnswer: "🚜"
+},
+
+{
+    id: 10,
+
+    instruction: "Įsimink paveikslėlius.",
+
+    memoryItems: [
+        "🐻",
+        "🚁",
+        "🍎",
+        "🌈",
+        "🐝",
+        "🎀",
+        "🌴",
+        "🚗",
+        "🍉",
+        "⭐",
+        "🦆"
+    ],
+
+    answers: [
+        "🌈",
+        "🍪",
+        "⚽",
+        "🚤"
+    ],
+
+    correctAnswer: "🌈"
+},
+{
+    id: 12,
+
+    instruction: "Įsimink paveikslėlius.",
+
+    memoryItems: [
+        "🦊",
+        "🍌",
+        "🚀",
+        "🌞",
+        "🐢",
+        "🎁",
+        "🌷",
+        "🚲",
+        "🍒",
+        "⭐",
+        "🦜",
+        "⚽"
+    ],
+
+    answers: [
+        "🦜",
+        "🍰",
+        "🚢",
+        "🌵"
+    ],
+
+    correctAnswer: "🦜"
+}
 
 ];
