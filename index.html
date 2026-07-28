@@ -10,8 +10,7 @@
 
     <title>Atminties treniruoklis</title>
 
-    <link rel="stylesheet"
-          href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -19,93 +18,119 @@
 
 <div id="app">
 
-<header class="game-header">
+    <!-- ================= HEADER ================= -->
 
-    <h1 id="game-title">
+    <header class="game-header">
 
-        🧠 Atminties treniruoklis
+        <h1 id="game-title">
+            🧠 Atminties treniruoklis
+        </h1>
 
-    </h1>
-
-    <div class="progress-panel">
         <div class="timer-wrapper">
 
-    <div id="timer-circle">
+            <div id="timer-circle">
 
-        <span id="timer-value">5</span>
+                <span id="timer-value">5</span>
 
-    </div>
-
-</div>
-
-        <div id="progress-text">
-
-            1 / 10
+            </div>
 
         </div>
 
-        <div class="progress-bar">
+        <div class="progress-panel">
 
-            <div class="progress-fill"></div>
+            <div id="progress-text">
+                1 / 10
+            </div>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill"></div>
+
+            </div>
 
         </div>
 
-    </div>
+    </header>
 
-</header>
+    <!-- ================= MAIN ================= -->
 
+    <main>
 
-<main>
+        <!-- Pirmas ekranas -->
 
-<section class="screen active">
+        <section id="welcomeScreen"
+                 class="screen card active">
 
-<h2>
+            <h2>🤖 Labas!</h2>
 
-🤖 Labas!
+            <p>
 
-</h2>
+                Aš esu robotukė <strong>Mintelė</strong>.
 
-<p>
+            </p>
 
-Aš esu robotukė <strong>Mintelė</strong>.
+            <p>
 
-</p>
+                Kviečiu kartu lavinti atmintį.
 
-<p>
+            </p>
 
-Kviečiu kartu lavinti atmintį.
+            <button id="startButton">
 
-</p>
+                Pradėti
 
-<button>
+            </button>
 
-Pradėti
+        </section>
 
-</button>
+        <!-- Antras ekranas -->
 
-</section>
+        <section id="gameScreen"
+                 class="screen">
 
-</main>
+            <h2>
 
+                🧠 Žaidimas prasidėjo!
 
-<footer>
+            </h2>
 
-<p>
+            <p>
 
-Skaitmeninių žaidimų laboratorija
+                JavaScript jau veikia.
 
-</p>
+            </p>
 
-<p>
+        </section>
 
-© 2026 Sigita Koroliovė
+    </main>
 
-</p>
+    <!-- ================= FOOTER ================= -->
 
-</footer>
+    <footer>
+
+        <p>
+
+            Skaitmeninių žaidimų laboratorija
+
+        </p>
+
+        <p>
+
+            © 2026 Sigita Koroliovė
+
+        </p>
+
+    </footer>
 
 </div>
+
+<!-- JavaScript visada pabaigoje -->
+
+<script src="game.js"></script>
 
 </body>
 
+</html><script src="config.js"></script>
+<script src="game.js"></script>
+</body>
 </html>

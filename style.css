@@ -324,4 +324,10 @@ button:focus{
 
     user-select:none;
 
+}.screen{
+    display:none;
+}
+
+.screen.active{
+    display:block;
 }
