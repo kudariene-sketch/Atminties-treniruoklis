@@ -30,7 +30,7 @@ function init() {
 
     console.log(CONFIG.gameTitle + " v" + CONFIG.version);
 
-    document.getElementById("game-title").textContent = CONFIG.gameTitle;
+    UI.setTitle(CONFIG.gameTitle);
 
     document
         .getElementById("startButton")
@@ -45,13 +45,7 @@ function startGame() {
 
     game.state = "playing";
 
-    document
-        .getElementById("welcomeScreen")
-        .classList.remove("active");
-
-    document
-        .getElementById("gameScreen")
-        .classList.add("active");
+    UI.showScreen("gameScreen");
 
     console.log("Žaidimas pradėtas");
 
