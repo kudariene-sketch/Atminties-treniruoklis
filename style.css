@@ -369,4 +369,15 @@ button:active{
 
     }
 
+}.footer {
+    margin-top: 30px;
+    padding: 16px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer p {
+    margin: 4px 0;
 }
