@@ -2,7 +2,7 @@
  * ==========================================
  * Atminties treniruoklis
  * File: feedback.js
- * Release: v1.0.0
+ * Release: v1.1.0
  * ==========================================
  */
 
@@ -24,40 +24,22 @@ function showFeedback(isCorrect) {
 
         game.score++;
 
-        if (icon) {
-            icon.textContent = "😊";
-        }
-
-        if (title) {
-            title.textContent = "Teisingai!";
-        }
-
-        if (message) {
-            message.textContent = "Puikiai įsiminėte paveikslėlį.";
-        }
+        icon.textContent = "😊";
+        title.textContent = "Teisingai!";
+        message.textContent = "Puikiai įsiminėte paveikslėlį.";
 
     } else {
 
-        if (icon) {
-            icon.textContent = "❌";
-        }
-
-        if (title) {
-            title.textContent = "Neteisingai";
-        }
-
-        if (message) {
-            message.textContent = "Bandykite prisiminti dar atidžiau.";
-        }
+        icon.textContent = "❌";
+        title.textContent = "Neteisingai";
+        message.textContent = "Kitą kartą pavyks geriau!";
 
     }
 
     const nextButton = document.getElementById("nextButton");
 
     if (nextButton) {
-
         nextButton.onclick = nextMission;
-
     }
 
 }
@@ -73,7 +55,6 @@ function nextMission() {
     if (game.currentMission >= game.totalMissions) {
 
         finishGame();
-
         return;
 
     }
@@ -92,8 +73,29 @@ function finishGame() {
 
     UI.showScreen("finishScreen");
 
-    console.log(
-        `Rezultatas: ${game.score} iš ${game.totalMissions}`
-    );
+    const finishTitle = document.querySelector("#finishScreen h2");
+    const finishText = document.querySelector("#finishScreen p");
+
+    if (finishTitle) {
+        finishTitle.textContent = `Surinkai ${game.score} iš ${game.totalMissions}`;
+    }
+
+    if (finishText) {
+
+        if (game.score === game.totalMissions) {
+            finishText.textContent = "Puiki atmintis! Tu atlikai visas užduotis.";
+        } else if (game.score >= Math.ceil(game.totalMissions * 0.7)) {
+            finishText.textContent = "Labai gerai! Pabandyk dar kartą ir pagerink rezultatą.";
+        } else {
+            finishText.textContent = "Puiki pradžia! Treniruok atmintį ir bandyk dar kartą.";
+        }
+
+    }
+
+    const restartButton = document.getElementById("restartButton");
+
+    if (restartButton) {
+        restartButton.onclick = startGame;
+    }
 
 }

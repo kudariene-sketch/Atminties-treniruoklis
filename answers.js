@@ -2,7 +2,7 @@
  * ==========================================
  * Atminties treniruoklis
  * File: answers.js
- * Release: v1.0.0
+ * Release: v1.1.1
  * ==========================================
  */
 
@@ -52,10 +52,8 @@ function showAnswerButtons() {
 
     container.innerHTML = "";
 
-    // Sukuriame atsakymų kopiją
     const shuffledAnswers = [...mission.answers];
 
-    // Fisher–Yates maišymas
     for (let i = shuffledAnswers.length - 1; i > 0; i--) {
 
         const j = Math.floor(Math.random() * (i + 1));
