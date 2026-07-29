@@ -25,26 +25,16 @@
 }
 
 body{
-
-    font-family:
-        "Segoe UI",
-        Tahoma,
-        Geneva,
-        Verdana,
-        sans-serif;
-
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
     background:var(--background);
-
     color:var(--text);
-
     min-height:100vh;
 
     display:flex;
-    justify-content:center;
-    align-items:flex-start;
+    flex-direction:column;
+    align-items:center;
 
     padding:30px;
-
 }
 
 #app{
@@ -370,11 +360,17 @@ button:active{
     }
 
 }.footer {
+    width: 100%;
+    max-width: 900px;
+
     margin-top: 30px;
     padding: 16px 0;
+
     text-align: center;
+
     font-size: 14px;
     color: #666;
+
     border-top: 1px solid #e5e5e5;
 }
 
