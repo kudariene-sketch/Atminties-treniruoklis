@@ -1,6 +1,6 @@
 /* ==========================================
    Atminties treniruoklis
-   Release v0.4.0A
+   SDL Framework v1.0
 ========================================== */
 
 :root{
@@ -24,18 +24,33 @@
     box-sizing:border-box;
 }
 
+/* ==========================================
+   BODY
+========================================== */
+
 body{
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
     background:var(--background);
+
     color:var(--text);
-    min-height:100vh;
 
     display:flex;
-    flex-direction:column;
-    align-items:center;
+    justify-content:center;
 
     padding:30px;
+
 }
+
+/* ==========================================
+   APP
+========================================== */
 
 #app{
 
@@ -58,9 +73,9 @@ body{
 
     padding:45px;
 
-    box-shadow:var(--shadow);
-
     text-align:center;
+
+    box-shadow:var(--shadow);
 
 }
 
@@ -128,7 +143,7 @@ button{
 
     background:var(--primary);
 
-    color:white;
+    color:#fff;
 
     font-size:1.2rem;
 
@@ -175,19 +190,7 @@ button:active{
 }
 
 /* ==========================================
-   MISIJA
-========================================== */
-
-#missionCounter{
-
-    font-size:1.2rem;
-
-    font-weight:600;
-
-}
-
-/* ==========================================
-   LAIKMATIS
+   TIMER
 ========================================== */
 
 #timer{
@@ -267,6 +270,8 @@ button:active{
 
     height:140px;
 
+    background:#fff;
+
     border:3px solid var(--border);
 
     border-radius:20px;
@@ -277,17 +282,15 @@ button:active{
 
     align-items:center;
 
-    background:white;
-
     font-size:70px;
-
-    transition:.2s;
 
 }
 
 .answerCard{
 
     cursor:pointer;
+
+    transition:.2s;
 
 }
 
@@ -300,7 +303,7 @@ button:active{
 }
 
 /* ==========================================
-   GRĮŽTAMASIS RYŠYS
+   FEEDBACK
 ========================================== */
 
 #feedbackIcon{
@@ -311,15 +314,29 @@ button:active{
 
 }
 
-#feedbackTitle{
+/* ==========================================
+   FOOTER
+========================================== */
 
-    margin-bottom:15px;
+.footer{
+
+    margin-top:30px;
+
+    padding:20px 0;
+
+    border-top:1px solid var(--border);
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:14px;
 
 }
 
-#feedbackMessage{
+.footer p{
 
-    font-size:1.2rem;
+    margin:4px 0;
 
 }
 
@@ -327,7 +344,13 @@ button:active{
    MOBILIEJI
 ========================================== */
 
-@media(max-width:700px){
+@media (max-width:700px){
+
+    body{
+
+        padding:15px;
+
+    }
 
     .screen{
 
@@ -359,21 +382,4 @@ button:active{
 
     }
 
-}.footer {
-    width: 100%;
-    max-width: 900px;
-
-    margin-top: 30px;
-    padding: 16px 0;
-
-    text-align: center;
-
-    font-size: 14px;
-    color: #666;
-
-    border-top: 1px solid #e5e5e5;
-}
-
-.footer p {
-    margin: 4px 0;
 }
